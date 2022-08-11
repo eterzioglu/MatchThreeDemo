@@ -274,14 +274,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3d7d8ab8db20c48a0d893de70178d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPanel: {fileID: 857065610}
-  gamePanel: {fileID: 2105345089}
-  endPanel: {fileID: 1409170822}
-  gridCount: {fileID: 1928710335}
-  createGridButton: {fileID: 387129952}
-  scoreText: {fileID: 234252347}
-  restartButton: {fileID: 641589182}
+  startPanel: {fileID: 857065612}
+  gamePanel: {fileID: 2105345091}
+  endPanel: {fileID: 1409170824}
   scoreCount: 0
+  gridCount: 0
 --- !u!1 &234252345
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,8 +734,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 26148600}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1409170824}
+        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
         m_MethodName: RestartButton
         m_Mode: 1
         m_Arguments:
@@ -797,6 +794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857065611}
   - component: {fileID: 857065612}
+  - component: {fileID: 857065613}
   m_Layer: 5
   m_Name: start-panel
   m_TagString: Untagged
@@ -837,6 +835,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae4f6465b7b12649a588db3083ae7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridCountText: {fileID: 1948664270}
+--- !u!225 &857065613
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857065610}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1257986916
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409170823}
   - component: {fileID: 1409170824}
+  - component: {fileID: 1409170825}
   m_Layer: 5
   m_Name: end-panel
   m_TagString: Untagged
@@ -966,6 +978,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8c681f023e82a47a912b69b5402fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &1409170825
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409170822}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1671543583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1673871352}
+  - component: {fileID: 1673871353}
   m_Layer: 0
   m_Name: GridManager
   m_TagString: Untagged
@@ -1075,6 +1100,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1673871353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673871351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532147938c2d33247a1bb4272359682f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 519420031}
 --- !u!1 &1928710333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2105345090}
   - component: {fileID: 2105345091}
+  - component: {fileID: 2105345092}
   m_Layer: 5
   m_Name: game-panel
   m_TagString: Untagged
@@ -1499,3 +1538,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afad388f852ee2498b14c029509d5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 234252347}
+--- !u!225 &2105345092
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105345089}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
