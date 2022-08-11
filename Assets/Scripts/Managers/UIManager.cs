@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
 
 public class UIManager : MonoBehaviour
@@ -10,9 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] StartPanel startPanel;
     [SerializeField] GamePanel gamePanel;
     [SerializeField] EndPanel endPanel;
-    [SerializeField] InputField gridCount;
-    [SerializeField] Text scoreText;
+    
     [HideInInspector] public int scoreCount = 0;
+    [HideInInspector] public int gridCount = 0;
     #endregion
 
     #region Singleton
@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = "Score : " + scoreCount;
+        gamePanel.scoreText.text = "Score : " + scoreCount;
 
         if (scoreCount == 3)
         {
@@ -42,13 +42,16 @@ public class UIManager : MonoBehaviour
 
     public void CreateGridButton()
     {
+        gridCount = Convert.ToInt32(startPanel.gridCountText.text);
+
         gamePanel.ActiveSmooth(true);
         startPanel.ActiveSmooth(false);
+        GridManager.instance.GenerateGrid();
     }
 
     void Success()
     {
-        scoreText.DOFade(0, 0.25f).OnComplete(() =>
+        gamePanel.scoreText.DOFade(0, 0.25f).OnComplete(() =>
         {
             gamePanel.Active(false);
             endPanel.Active(true);
