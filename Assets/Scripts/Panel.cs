@@ -6,10 +6,7 @@ public abstract class Panel : MonoBehaviour
 {
     public CanvasGroup group
     {
-        get
-        {
-            return GetComponent<CanvasGroup>();
-        }
+        get{   return GetComponent<CanvasGroup>(); }
     }
 
     public void Active(bool isActive)
