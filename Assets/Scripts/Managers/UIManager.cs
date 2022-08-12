@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     #region Variables
     [SerializeField] StartPanel startPanel;
     [SerializeField] GamePanel gamePanel;
-    [SerializeField] EndPanel endPanel;
     
     [HideInInspector] public int scoreCount = 0;
     [HideInInspector] public int gridCount = 0;
@@ -27,7 +26,6 @@ public class UIManager : MonoBehaviour
     {
         startPanel.Active(true);
         gamePanel.Active(false);
-        endPanel.Active(false);
     }
 
     void Update()
@@ -54,7 +52,7 @@ public class UIManager : MonoBehaviour
         gamePanel.scoreText.DOFade(0, 0.25f).OnComplete(() =>
         {
             gamePanel.Active(false);
-            endPanel.Active(true);
+            startPanel.Active(true);
             scoreCount = 0;
         });
     }

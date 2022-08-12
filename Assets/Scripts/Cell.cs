@@ -5,19 +5,21 @@ using DG.Tweening;
 
 public class Cell : MonoBehaviour
 {
-    void Update()
-    {
-        if (transform.childCount == 0) GetComponent<BoxCollider2D>().enabled = true;
-    }
+    [SerializeField] GameObject cross;
+    bool isChildEnable = false;
 
     void OnMouseDown()
     {
-        GetComponent<BoxCollider2D>().enabled = false;
-        SpriteRenderer cross = Instantiate(Resources.Load<SpriteRenderer>("cross"), transform.position, Quaternion.identity, transform);
-        cross.transform.DOScale(Vector3.one, 0.25f).OnComplete(() =>
-        {
-            //cross.GetComponent<Cross>().ActivateChilds();
-            //DOVirtual.DelayedCall(0.1f, () => cross.GetComponent<Cross>().ControlCells());
-        });
+        if (isChildEnable) return;
+
+        CrossEnabled(true);
+        
+    }
+
+    public void CrossEnabled(bool enabled)
+    {
+        int scale = enabled ? 1 : 0;
+        cross.transform.DOScale(Vector3.one * scale, 0.25f);
+        isChildEnable = enabled;
     }
 }

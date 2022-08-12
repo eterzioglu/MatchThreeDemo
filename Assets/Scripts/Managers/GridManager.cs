@@ -39,4 +39,9 @@ public class GridManager : MonoBehaviour
             y--;
         }
     }
+
+    public void CheckNeighbors()
+    {
+
+    }
 }
