@@ -275,7 +275,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPanel: {fileID: 857065612}
   gamePanel: {fileID: 2105345091}
-  endPanel: {fileID: 0}
   scoreCount: 0
   gridCount: 0
 --- !u!1 &234252345
@@ -746,9 +745,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2105345089}
-        m_TargetAssemblyTypeName: EndPanel, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 2105345091}
+        m_TargetAssemblyTypeName: GamePanel, Assembly-CSharp
+        m_MethodName: RestartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

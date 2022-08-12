@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     #region Variables
-    Vector3 camPos;
     Camera cam;
     float refRatio = (float)1080 / 1920;
     #endregion

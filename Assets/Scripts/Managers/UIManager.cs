@@ -22,38 +22,23 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
+    private void Update()
+    {
+        gamePanel.scoreText.text = "Score : " + scoreCount;
+    }
+
     void Start()
     {
         startPanel.Active(true);
         gamePanel.Active(false);
     }
 
-    void Update()
-    {
-        gamePanel.scoreText.text = "Score : " + scoreCount;
-
-        if (scoreCount == 3)
-        {
-            Success();
-        }
-    }
-
     public void CreateGridButton()
     {
-        gridCount = Convert.ToInt32(startPanel.gridCountText.text);
-
         gamePanel.ActiveSmooth(true);
         startPanel.ActiveSmooth(false);
-        GridManager.instance.GenerateGrid();
-    }
 
-    void Success()
-    {
-        gamePanel.scoreText.DOFade(0, 0.25f).OnComplete(() =>
-        {
-            gamePanel.Active(false);
-            startPanel.Active(true);
-            scoreCount = 0;
-        });
+        gridCount = Convert.ToInt32(startPanel.gridCountText.text);
+        GridManager.instance.GenerateGrid(gridCount);
     }
 }
