@@ -53,21 +53,21 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public List<Cell> ControlNeighborCells(int x, int y, List<Cell> addedNeighbors=null)
+    public List<Cell> ControlNeighborCells(int x, int y, List<Cell> neighbors=null)
     {
-        if (addedNeighbors == null) addedNeighbors = new List<Cell>();
+        if (neighbors == null) neighbors = new List<Cell>();
 
         foreach (var index in Indexes)
         {
             if (x + index.x >= count || y + index.y >= count || x + index.x < 0 || y + index.y < 0) continue;
 
-            Cell neighbor = gridElements[x + index.x, y + index.y];
+            Cell neighborCell = gridElements[x + index.x, y + index.y];
 
-            if (!neighbor.isChildEnable || neighbor == null || addedNeighbors.Contains(neighbor)) continue;
+            if (!neighborCell.isChildEnable || neighborCell == null || neighbors.Contains(neighborCell)) continue;
 
-            addedNeighbors.Add(neighbor);
-            ControlNeighborCells(neighbor.x, neighbor.y, addedNeighbors);
+            neighbors.Add(neighborCell);
+            ControlNeighborCells(neighborCell.x, neighborCell.y, neighbors);
         }
-        return addedNeighbors;
+        return neighbors;
     }
 }
