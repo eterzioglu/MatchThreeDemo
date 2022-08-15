@@ -9,8 +9,7 @@ public class UIManager : MonoBehaviour
     #region Variables
     [SerializeField] StartPanel startPanel;
     [SerializeField] GamePanel gamePanel;
-    
-    [HideInInspector] public int scoreCount = 0;
+
     [HideInInspector] public int gridCount = 0;
     #endregion
 
@@ -21,11 +20,6 @@ public class UIManager : MonoBehaviour
         if (instance == null) instance = this;
     }
     #endregion
-
-    private void Update()
-    {
-        gamePanel.scoreText.text = "Score : " + scoreCount;
-    }
 
     void Start()
     {

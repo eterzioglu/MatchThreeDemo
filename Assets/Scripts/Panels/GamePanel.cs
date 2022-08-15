@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GamePanel : Panel
 {
-    public Text scoreText;
-
     public void RestartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

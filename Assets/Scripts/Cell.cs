@@ -38,7 +38,6 @@ public class Cell : MonoBehaviour
             {
                 neighbor.CrossEnabled(false);
             }
-            UIManager.instance.scoreCount++;
         }
     }
 }
